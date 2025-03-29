@@ -1,0 +1,56 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.logoImg {
+  width: 300px;
+  -moz-user-select: none;
+  user-select: none;
+}
+.logoDivLink {
+  display: flex;
+  color: #bf4aa8;
+  font-family: "Roboto";
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  gap: 5rem;
+}
+.logoDivLink a {
+  display: block;
+  color: #bf4aa8;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border 1s;
+}
+
+.logoDivLink a::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: #bf4aa8;
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.3s;
+}
+
+.logoDivLink a:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.underline::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: #bf4aa8;
+  transform: translate3d(0, 0, 0);
+}

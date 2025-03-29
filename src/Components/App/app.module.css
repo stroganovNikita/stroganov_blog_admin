@@ -1,0 +1,141 @@
+a {
+  display: block;
+  text-decoration: none;
+  width: max-content;
+}
+.msgOnlyForAdmin {
+  color: #51d0de;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 10rem;
+}
+.postsDiv {
+  display: flex;
+  justify-self: center;
+  border-top: 2px solid #bf4aa8;
+  border-radius: 30px;
+  margin: 30px;
+  padding: 30px;
+  width: 70%;
+  justify-content: left;
+}
+.postDiv {
+  width: 350px;
+  color: #51d0de;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #bf4aa8;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+}
+.postDiv:hover {
+  box-shadow: 0 0 20px #bf4aa8;
+}
+.postDiv img {
+  display: block;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 1px solid #bf4aa8;
+  width: 350px;
+  height: 200px;
+}
+.postDiv h3 {
+  font-size: 2rem;
+  padding: 0 5px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.postText {
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  max-width: 330px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  margin-top: 0;
+  margin-left: 10px;
+  padding: 0 10px;
+}
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.infoAboufPost {
+  display: flex;
+}
+.postMessageDiv,
+.postTimeDiv {
+  display: flex;
+  align-items: center;
+}
+.postMessageDiv p,
+.postTimeDiv p {
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+.allPostHeader {
+  color: #51d0de;
+  font-size: 2.3rem;
+  text-align: center;
+  margin-top: 10rem;
+}
+.newPostHeader {
+  color: #51d0de;
+  font-size: 2.3rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+.formNewPost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formNewPost label {
+  color: #51d0de;
+  font-size: 1.5rem;
+  display: block;
+  margin-right: 1rem;
+}
+.formNewPost input {
+  font-size: 1.2rem;
+  padding: 5px;
+}
+.formNewPost input:nth-of-type(1) {
+  color: white;
+}
+.formNewPost input:nth-of-type(2) {
+  width: 300px;
+}
+.formNewPost div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.formNewPost textarea {
+  font-size: 1.3rem;
+  width: 55%;
+  height: 400px;
+  resize: none;
+}
+.formNewPost button {
+  background-color: #bf4aa8;
+  color: #51d0de;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 5px 15px;
+  letter-spacing: 1px;
+  border: none;
+  transition: background-color 0.4s, color 0.4s;
+  cursor: pointer;
+}
+.formNewPost button:hover {
+  background-color: #51d0de;
+  color: #e000b3;
+}
