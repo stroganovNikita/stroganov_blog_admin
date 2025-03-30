@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './Components/App/App';
 import LogIn from './Components/LogIn/LogIn';
-// import Post from './components/Post/Post';
+import Post from './Components/Post/Post';
 
 const router = createBrowserRouter([
     {
@@ -9,8 +9,12 @@ const router = createBrowserRouter([
         element: <App />
     },
     {
-        path: 'session',
+        path: '/session',
         element: <LogIn />
+    },
+    {
+        path:'/posts/:postId',
+        element: <Post />
     }
 ]);
 

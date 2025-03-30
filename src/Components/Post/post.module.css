@@ -1,0 +1,166 @@
+.mainPost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+hr {
+  border: none;
+  border-bottom: 1px solid #bf4aa8;
+  width: 99%;
+}
+.formPostUpdate {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.formPostUpdate label {
+  color: #51d0de;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 5px;
+}
+.formPostUpdate input {
+  font-size: 1.3rem;
+  width: 500px;
+  padding: 5px;
+}
+
+.formPostUpdate textarea {
+  font-size: 1.3rem;
+  width: 40vw;
+  height: 300px;
+  resize: none;
+}
+.formPostUpdate button {
+  background-color: #51d0de;
+  color: #bf4aa8;
+  font-family: "Roboto";
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 2rem;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.formPostUpdate button:hover {
+  background-color: #bf4aa8;
+  color: #5dedfc;
+}
+.formPostDelete {
+  position: absolute;
+  top: 400px;
+  right: 10%;
+}
+.formPostDelete button {
+  background-color: #51d0de;
+  color: rgb(186, 0, 0);
+  font-family: "Roboto";
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 2rem;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.formPostDelete button:hover {
+  background-color: rgb(186, 0, 0);;
+  color: #51d0de;
+}
+.formPostComment {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+.formPostComment label {
+  font-size: 1.5rem;
+  color: #51d0de;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+}
+.formPostComment textarea {
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  border-radius: 20px 20px 0 0;
+  padding: 5px;
+  width: 40vw;
+  height: 80px;
+  resize: none;
+  outline: none;
+}
+.formPostComment button {
+  background-color: #51d0de;
+  color: #bf4aa8;
+  font-family: "Roboto";
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 5px;
+  border: none;
+  border-radius: 0 0 20px 20px;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.formPostComment button:hover {
+  background-color: #bf4aa8;
+  color: #5dedfc;
+}
+.commentsWarning {
+  color: white;
+  font-size: 2rem;
+  margin-top: 5rem;
+}
+.commentDiv {
+  background-color: white;
+  border-radius: 20px;
+  margin: 3rem;
+  width: 35vw;
+}
+.commentDiv p {
+  font-family: "Roboto";
+  overflow-wrap: anywhere;
+  font-size: 1.3rem;
+  padding: 10px 15px;
+}
+.infoAboutUserComment {
+  display: flex;
+  border-radius: 20px 20px 0 0;
+  background-color: #51d0de;
+  justify-content: space-between;
+}
+.infoAboutUserComment div {
+  display: flex;
+  color: rgb(36, 36, 36);
+  margin: 0;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0 10px;
+}
+.responseComment {
+  text-align: center;
+  color: green;
+  font-size: 1.3rem;
+}
+.onlyForAdminWarning {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 10rem;
+  color: #51d0de;
+}
+.arrowBack {
+  position: absolute;
+  color: #bf4aa8;
+  cursor: pointer;
+  transition: color 0.2s;
+  size: 100px;
+  top: 50%;
+  left: 3%;
+}
+.arrowBack:hover {
+  color: #51d0de;
+}
+

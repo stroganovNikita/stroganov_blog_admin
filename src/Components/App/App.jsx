@@ -21,7 +21,7 @@ function App() {
     } catch {
       console.log("failed fetch");
     }
-  }, []);
+  }, [response]);
 
   useEffect(() => {
     let checkFn = checkTokenFetch();
@@ -70,17 +70,16 @@ function App() {
                 <textarea id="text" name="text" required></textarea>
                 <button type="submit">Create</button>
               </form>
-              {response.data && <p className={classes.responseFromCreatePost}>{response.data}</p>}
+              {response.data && <p className={classes.responseSuccess}>{response.data}</p>}
             </div>
-            <h2 className={classes.allPostHeader}>All posts:</h2>
+            <h2 className={classes.allPostHeader}>Update posts:</h2>
             <div className={classes.postsDiv}>
               {posts &&
                 posts.posts.map((post, index) => {
                   return (
                     <Link to={`/posts/${post.id}`} key={index} viewTransition>
                       <div key={index} className={classes.postDiv}>
-                        <img src="https://cyfgfocmixveitalwndg.supabase.co/storage/v1/object/public/blog//welcome4.jpg" />
-                        <div className={classes.postHeader}>
+                        <img src={post.image} />
                           <h3>{post.title}</h3>
                           <div className={classes.infoAboufPost}>
                             <div className={classes.postTimeDiv}>
@@ -92,18 +91,8 @@ function App() {
                               <p>{post.comments.length}</p>
                             </div>
                           </div>
-                        </div>
                         <p className={classes.postText}>
-                          &nbsp;&nbsp;community for aspiring web developers!
-                          This is the first post on this blog since hosting it
-                          on the web. As you know, I'm just an aspiring web
-                          developer myself, so thiscommunity for aspiring web
-                          developers! This is the first post on this blog since
-                          hosting it on the web. As you know, I'm just an
-                          aspiring web developer myself, so thiscommunity for
-                          aspiring web developers! This is the first post on
-                          this blog since hosting it on the web. As you know,
-                          I'm just an aspiring web developer myself, so this
+                          {post.text}
                         </p>
                       </div>
                     </Link>
