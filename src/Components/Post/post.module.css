@@ -151,6 +151,24 @@ hr {
   margin-top: 10rem;
   color: #51d0de;
 }
+.deleteComment {
+  position: relative; 
+  bottom: 40px;
+  background-color: #51d0de;
+  color: rgb(186, 0, 0);
+  font-family: "Roboto";
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.deleteComment:hover {
+  background-color: rgb(186, 0, 0);;
+  color: #51d0de;
+}
 .arrowBack {
   position: absolute;
   color: #bf4aa8;

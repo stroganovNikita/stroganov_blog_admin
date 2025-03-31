@@ -1,6 +1,6 @@
 async function fetchPosts() {
   try {
-    const posts = await fetch("http://localhost:3000/posts", {
+    const posts = await fetch("https://celebrated-vision-production.up.railway.app/posts", {
       method: "GET",
       mode: "cors",
     });

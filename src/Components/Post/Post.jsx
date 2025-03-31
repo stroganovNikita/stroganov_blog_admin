@@ -20,12 +20,13 @@ function Post() {
   const post = useParams();
   const currentPost = posts && posts.posts.filter((pos) => pos.id == post.postId);
 
+  console.log('test')
   useEffect(() => {
     const promisePosts = fetchPosts();
     promisePosts
       .then((promise) => promise.json())
       .then((promise) => setPosts(promise));
-  }, []);
+  }, [response]);
 
   useEffect(() => {
     let checkFn = checkTokenFetch();
@@ -35,7 +36,7 @@ function Post() {
   const deletePost = (event) => {
     const token = localStorage.getItem("token");
     event.preventDefault();
-    fetch(`http://localhost:3000/posts/${post.postId}`, {
+    fetch(`https://celebrated-vision-production.up.railway.app/posts/${post.postId}`, {
       method: "DELETE",
       mode: "cors",
       headers: {
@@ -48,7 +49,7 @@ function Post() {
     const token = localStorage.getItem("token");
     event.preventDefault();
     const body = event.currentTarget.elements;
-    fetch(`http://localhost:3000/posts/${post.postId}`, {
+    fetch(`https://celebrated-vision-production.up.railway.app/posts/${post.postId}`, {
       method: "PUT",
       mode: "cors",
       headers: {
@@ -59,12 +60,26 @@ function Post() {
         title: body.title.value,
         image: body.image.value,
         text: body.text.value,
-        published: body.published.checked
+        published: body.published.checked,
       }),
     })
-    .then((response) => response.json())
-    .then((response) => setResponse(response))
+      .then((response) => response.json())
+      .then((response) => setResponse(response));
   };
+
+  const deleteComment = (commentId) => {
+    const token = localStorage.getItem("token");
+    fetch(`https://celebrated-vision-production.up.railway.app/posts/${post.postId}/comments/${commentId}`, {
+      method: "DELETE",
+      mode: "cors",
+      headers: {
+        'authorization': 'Bearer ' + token
+      }
+    })
+      .then((response) => response.json())
+      .then((response) => setResponse({...response}));
+  };
+
   if (checkToken.errors) {
     return (
       <>
@@ -95,11 +110,16 @@ function Post() {
               <input
                 type="text"
                 id="title"
-                name='title'
+                name="title"
                 defaultValue={currentPost[0].title}
               />
               <label htmlFor="published">Published:</label>
-              <input type='checkbox' name='published' id='published' defaultChecked={currentPost[0].published}/>
+              <input
+                type="checkbox"
+                name="published"
+                id="published"
+                defaultChecked={currentPost[0].published}
+              />
               <label htmlFor="text">Text: </label>
               <textarea
                 id="text"
@@ -116,7 +136,12 @@ function Post() {
         <hr />
         {currentPost &&
           currentPost[0].comments.map((comment, index) => (
-            <Comment comment={comment} index={index} key={index} />
+            <Comment
+              comment={comment}
+              index={index}
+              key={index}
+              deleteComment={deleteComment}
+            />
           ))}
         ;
         <Link to="/" viewTransition>
@@ -131,21 +156,29 @@ function Post() {
   );
 }
 
-function Comment({ comment, index }) {
+function Comment({ comment, index, deleteComment }) {
   return (
-    <div key={index} className={classes.commentDiv}>
-      <div className={classes.infoAboutUserComment}>
-        <div>
-          <Icon path={mdiAccount} size={1.3} />
-          <p>{comment.authorname}</p>
+    <>
+      <div key={index} className={classes.commentDiv}>
+        <div className={classes.infoAboutUserComment}>
+          <div>
+            <Icon path={mdiAccount} size={1.3} />
+            <p>{comment.authorname}</p>
+          </div>
+          <div>
+            <Icon path={mdiCalendarClock} size={1.3} />
+            <p>{new Date(comment.date).toLocaleString()}</p>
+          </div>
         </div>
-        <div>
-          <Icon path={mdiCalendarClock} size={1.3} />
-          <p>{new Date(comment.date).toLocaleString()}</p>
-        </div>
+        <p>{comment.text}</p>
       </div>
-      <p>{comment.text}</p>
-    </div>
+      <button
+        className={classes.deleteComment}
+        onClick={() => deleteComment(comment.id)}
+      >
+        Delete
+      </button>
+    </>
   );
 }
 

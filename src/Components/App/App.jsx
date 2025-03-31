@@ -36,7 +36,7 @@ function App() {
     form.append('title', body.title.value);
     form.append('text', body.text.value);
     event.preventDefault();
-    fetch("http://localhost:3000/posts", {
+    fetch("https://celebrated-vision-production.up.railway.app/posts", {
       method: "POST",
       mode: "cors",
       headers: {

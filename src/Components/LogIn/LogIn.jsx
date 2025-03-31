@@ -19,7 +19,7 @@ function LogIn() {
     const body = event.currentTarget.elements;
     let answer = "";
     event.preventDefault();
-    fetch("http://localhost:3000/session/", {
+    fetch("https://celebrated-vision-production.up.railway.app/session/", {
       method: "POST",
       mode: "cors",
       headers: {
